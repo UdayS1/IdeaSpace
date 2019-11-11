@@ -1,0 +1,100 @@
+<html>
+
+<head>
+    <title>Bolt 2019</title>
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css" rel="stylesheet"
+        media="screen"> -->
+    <!-- <link rel="stylesheet" media="screen" href="http://handsontable.com/dist/handsontable.full.css"> -->
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.9/css/mdb.min.css" rel="stylesheet">
+    <link rel="stylesheet" media="screen" href="css\project.css">
+    <!-- JQuery -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.9/js/mdb.min.js"></script>
+</head>
+
+<body>
+    <div id="routingContainer" class="container-fluid">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item" id="bc1"><a href="#" id="link1" data-bind="click: goToMainPage">Home</a>
+                </li>
+                <li class="breadcrumb-item"><a href="#hackathons" id="link2" data-bind="click: getData">Memory clear</a>
+                </li>
+                <li class="breadcrumb-item" aria-current="page"><a href="#">Help</a></li>
+            </ol>
+        </nav>
+
+    </div>
+    <header id="title">
+        <h1 class="jumbotron">VM CONSOLE</h1>
+    </header>
+    <div id="mainButtons" class="card">
+
+        <button data-bind="click: startAllVm" type="button" class="btn btn-dark active" aria-pressed="true">Start All Virtual Machines</button>
+            <button data-bind="click: stopAllVm" type="button" class="btn btn-dark active" aria-pressed="true">Stop All Virtual Machines</button>
+      
+
+    </div>
+    <div id="vmTable">
+
+
+
+        <table class="table table-responsive table-bordered table-striped table-hover table-wrapper-scroll-y">
+            <thead class="thead-dark">
+                <th class="th-lg">
+                    <p class="text-center">
+                            Virtual Machine
+                    </p>
+                    
+                </th>
+                <th class="th-lg" scope="col">
+                        <p class="text-center">
+                                Options
+                        </p>
+                </th>
+            </thead>
+            <tbody data-bind="foreach: VM_LIST">
+                <tr>
+                    <td data-bind="text: $data"></td>
+                    <td>
+                        <div class="flex-center">
+                        <button type="button" class="btn btn-sm   btn-success active" aria-pressed="true">
+                            Start
+                        </button>
+                        <button type="button" class="btn btn-sm   btn-danger active" aria-pressed="true">
+                            Stop</button>
+                        <button type="button" class="btn btn-sm   btn-warning active" aria-pressed="true">
+                            Restart</button>
+                        </div>
+                    </td>
+
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+
+    <script data-main="js/config" src="js/dependencies/require.js"></script>
+    <script>
+        require(['config']);
+    </script>
+</body>
+
+</html>
