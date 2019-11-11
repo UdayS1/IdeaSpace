@@ -34,8 +34,10 @@ requirejs(['jquery', 'knockout', 'sammy', 'ajax','appViewModel'], function ($, k
 
             $(function () {
                 app.run('#');
-                ko.applyBindings(appViewModel,document.getElementById('vmTable'));
+                ko.applyBindings(appViewModel,document.getElementById('vmTableContainer'));
                 ko.applyBindings(appViewModel,document.getElementById('mainButtons'));
+                ko.applyBindings(appViewModel,document.getElementById('routingContainer'));
+                ko.applyBindings(appViewModel,document.getElementById('homeGridContainer'));
             });
              
         })

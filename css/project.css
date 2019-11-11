@@ -50,8 +50,18 @@ img{
 .btn .btn-dark{
   border-color: aqua;
 }
-.table {
+/* .table {
   height: 44%;
+  width: 100%;
+  color: white;
+} */
+#vmTable {
+  height: 44%;
+  width: 100%;
+  color: white;
+}
+#homeGrid {
+  height: 70%;
   width: 100%;
   color: white;
 }

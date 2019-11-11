@@ -29,13 +29,13 @@ define(['jquery', 'knockout'], function ($, ko) {
     });
   };
 
-  util.POST = async function (url, dataToBeSend) {
+  util.POST = async function (url, nodeName) {
     return new Promise(resolve => {
       $.ajax(url, {
-        data: ko.toJSON(dataToBeSend),
+        data: nodeName,
         method: "post",
         contentType: "application/json",
-        success: resolve()
+        success: resolve(data)
       });
     });
   };
