@@ -31,7 +31,7 @@ td:hover{
   border-color:aqua;
 }
 .jumbotron{
-  padding-top: 3%;
+  padding-top: 1%;
   padding-bottom: 1%;
   /* background-color: rgba(11, 145, 133, 0.993); */
   background-color: #343a40;
@@ -47,13 +47,13 @@ td:hover{
   border-color: aqua;
 }
 .table {
-  height: 50%;
+  height: 44%;
   width: 100%;
   color: white;
 }
 
 h1 {
-  font-size: 64px;
+  font-size: 42px;
   font-weight: 600;
 }
 body{

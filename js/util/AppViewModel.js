@@ -13,6 +13,9 @@ define(['knockout'], function (ko) {
     AppViewModel.stopAllVm=()=>{
         alert("All VMs stopped");
     }
+    AppViewModel.startVM=()=>{
+        alert("STARTED VM"+this);
+    }
     return {
         getAppViewModel : function(){
             return AppViewModel;
