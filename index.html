@@ -15,6 +15,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
     <!-- Material Design Bootstrap -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.9/css/mdb.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet">
     <link rel="stylesheet" media="screen" href="css\project.css">
     <!-- JQuery -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -27,6 +28,8 @@
     <!-- MDB core JavaScript -->
     <script type="text/javascript"
         src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.9/js/mdb.min.js"></script>
+        <script type="text/javascript" 
+        src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
 </head>
 
 <body>
@@ -38,18 +41,30 @@
                 <li class="breadcrumb-item"><a href="#hackathons" id="link2" data-bind="click: getData">Memory clear</a>
                 </li>
                 <li class="breadcrumb-item" aria-current="page"><a href="#">Help</a></li>
+                <li class="breadcrumb-item">
+                    <a class="btn btn-sm btn-success" onclick="toastr.success('VMs started!.');">
+                        Success message
+                    </a>
+                </li>
             </ol>
         </nav>
 
     </div>
     <header id="title">
-        <h1 class="jumbotron">VM CONSOLE</h1>
+        <h1 class="jumbotron">
+            <div class="d-flex justify-content-between">
+                VM CONSOLE
+                <img src="css/MO_LOGO.png" />
+            </div>
+        </h1>
     </header>
     <div id="mainButtons" class="card">
 
-        <button data-bind="click: startAllVm" type="button" class="btn btn-dark active" aria-pressed="true">Start All Virtual Machines</button>
-            <button data-bind="click: stopAllVm" type="button" class="btn btn-dark active" aria-pressed="true">Stop All Virtual Machines</button>
-      
+        <button data-bind="click: startAllVm" type="button" class="btn btn-dark active" aria-pressed="true">Start All
+            Virtual Machines</button>
+        <button data-bind="click: stopAllVm" type="button" class="btn btn-dark active" aria-pressed="true">Stop All
+            Virtual Machines</button>
+
 
     </div>
     <div id="vmTable">
@@ -60,14 +75,14 @@
             <thead class="thead-dark">
                 <th class="th-lg">
                     <p class="text-center">
-                            Virtual Machine
+                        Virtual Machine
                     </p>
-                    
+
                 </th>
                 <th class="th-lg" scope="col">
-                        <p class="text-center">
-                                Options
-                        </p>
+                    <p class="text-center">
+                        Options
+                    </p>
                 </th>
             </thead>
             <tbody data-bind="foreach: VM_LIST">
@@ -75,13 +90,18 @@
                     <td data-bind="text: $data"></td>
                     <td>
                         <div class="flex-center">
-                        <button type="button" data-bind="click: startVM" class="btn btn-sm   btn-success active" aria-pressed="true">
-                            Start
-                        </button>
-                        <button type="button" data-bind="click: startVM" class="btn btn-sm   btn-danger active" aria-pressed="true">
-                            Stop</button>
-                        <button type="button" data-bind="click: startVM" class="btn btn-sm   btn-warning active" aria-pressed="true">
-                            Restart</button>
+                            <button type="button" data-bind="click: $parent.startVM"
+                                class="btn btn-sm   btn-success active" aria-pressed="true">
+                                Start
+                            </button>
+                            <button type="button" data-bind="click: $parent.stopVM"
+                                class="btn btn-sm   btn-danger active" aria-pressed="true">
+                                Stop</button>
+                            <button type="button" data-bind="click: $parent.restartVM"
+                                class="btn btn-sm   btn-warning active" aria-pressed="true">
+                                Restart</button>
+                            <button type="button" data-bind="click: $parent.clearMemoryVM"
+                                class="btn btn-sm btn-info">Clear Memory</button>
                         </div>
                     </td>
 

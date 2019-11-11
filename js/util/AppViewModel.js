@@ -7,14 +7,23 @@ define(['knockout'], function (ko) {
             'NY-VPC-PRIS25', 'NY-VPC-PRIS26', 'NY-VPC-PRIS27']
     
     AppViewModel.VM_LIST=ko.observableArray(vmList);
-    AppViewModel.startAllVm=()=>{
+    AppViewModel.startAllVm=function(){
         alert("All VMs started");
     }
-    AppViewModel.stopAllVm=()=>{
+    AppViewModel.stopAllVm=function(){
         alert("All VMs stopped");
     }
-    AppViewModel.startVM=()=>{
+    AppViewModel.startVM=function(){
         alert("STARTED VM"+this);
+    }
+    AppViewModel.stopVM=function(){
+        alert("STOPPED VM"+this);
+    }
+    AppViewModel.restartVM=function(){
+        alert("RESTARTED VM"+this);
+    }
+    AppViewModel.clearMemoryVM=function(){
+        alert("CLEARED MEMORY VM"+this);
     }
     return {
         getAppViewModel : function(){

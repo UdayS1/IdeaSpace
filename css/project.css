@@ -39,6 +39,10 @@ td:hover{
   size: 5rem;
   border-color: aqua;
 }
+img{
+  height:10%;
+  width:20%;
+}
 
 .btn{
   font-size: 20px;
