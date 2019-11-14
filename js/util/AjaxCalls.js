@@ -4,15 +4,16 @@ define(['jquery', 'knockout'], function ($, ko) {
 
   util.GET = function (url) {
     return new Promise((resolve) => {
-      $.ajax(url, {
-        method: "GET",
-        contentType: "application/json",
-        success: function (data) {
-          resolve(data);
-        }
-
-      });
-
+      setTimeout(function(){
+        $.ajax(url, {
+          method: "GET",
+          contentType: "application/json",
+          success: function (data) {
+            resolve(data);
+          }
+        });
+      },200);
+     
     });
 
 

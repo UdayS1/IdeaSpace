@@ -2,13 +2,6 @@
 
 <head>
     <title>Bolt 2019</title>
-    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css" rel="stylesheet"
-        media="screen"> -->
-    <!-- <link rel="stylesheet" media="screen" href="http://handsontable.com/dist/handsontable.full.css"> -->
-
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
     <!-- Bootstrap core CSS -->
@@ -43,10 +36,10 @@
                 <li class="breadcrumb-item" id="bc1"><a href="#" id="link1"
                         data-bind="click: showBrowserDetails">Home</a>
                 </li>
-                <li class="breadcrumb-item"><a href="#hackathons" id="link2" data-bind="click: showGridOperations">Grid
+                <li class="breadcrumb-item"><a href="#hackathons" id="link2" data-bind="click: showGridOperations">Node
                         Operations</a>
                 </li>
-                <li class="breadcrumb-item" aria-current="page"><a href="#">Help</a></li>
+                <li class="breadcrumb-item" aria-current="page"><a href="#">About</a></li>
 
             </ol>
         </nav>
@@ -90,15 +83,16 @@
                     </p>
                 </th>
             </thead>
-            <tbody data-bind="foreach: VM_LIST">
+            <tbody data-bind="foreach: activeNodeList">
                 <tr>
                     <td data-bind="text: $data"></td>
                     <td data-bind="click: $parent.showChromeVersions">
                         <div class="justify-content-left">
+
                             <i class="fab fa-chrome"></i>
                             <i class="fab fa-chrome"></i>
-                            <i class="fab fa-chrome"></i>
-                            <!-- <i class="fas fa-angle-down rotate-icon"></i> -->
+                            <i class="fab fa-chrome"></i> 
+                            <!-- <i class="fas fa-angle-down rotate-icon"></i>-->
 
                         </div>
                     </td>
@@ -132,8 +126,11 @@
             </thead>
             <tbody data-bind="foreach: VM_LIST">
                 <tr>
-                    <td data-bind="text: $data">
+                    <td class="d-flex mb-3 justify-content-between"> 
+                        <div class="mr-auto p-2" data-bind="text: $data"></div>
+                       <div class="p-2"> <i class="far fa-check-circle fa-2x"></i></td></div>
                     </td>
+                   
                     <td>
                         <div class="flex-center">
                             <button type="button" data-bind="click: $parent.startVM"
